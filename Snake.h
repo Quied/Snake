@@ -8,11 +8,7 @@ enum SnakeMove {
 	LEFT
 };
 
-class Snake {
-
-	const char SnakeHad = '*';
-	const char SnakeBody = '#';
-	
+class Snake {	
 	
 	uint32_t Snake_Size = 0;
 	const uint32_t Max_Snake_Size = 50;

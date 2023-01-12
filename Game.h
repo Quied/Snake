@@ -17,7 +17,7 @@ class Game {
 	const int AreaHeight = 30, AreaWidth = 50;
 
 	//====< SNAKE COORDINATES >=====
-	int SnakeX, SnakeY;
+	int SnakeX = AreaWidth / 2, SnakeY = AreaHeight / 2;
 
 	//====< FOOD COORDINATES >=====
 	int FoodX, FoodY;
@@ -25,6 +25,8 @@ class Game {
 	mutable std::mutex mtx_;
 	mutable uint32_t score_ = 0;
 
+	const char SnakeHad = '*';
+	const char SnakeBody = '#';
 	const char Food = '@';
 
 public:

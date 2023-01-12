@@ -38,16 +38,20 @@ void Game::DrawGameArea() const {
 	//====<  DRAW CENTRAL BORDERS >====
 	for (int i = 0; i < this->AreaHeight; i++) {
 		for (int j = 0; j < this->AreaWidth; j++) {
-			if (j == 0 || j == this->AreaWidth - 1) std::cout << "X";
-			std::cout << " ";
+			if (j == 0 || j == this->AreaWidth - 2) std::cout << "X";
+			// std::cout << " ";
 
 			//==< DRAW SNAKE >===
 			 if (i == this->SnakeY && j == this->SnakeX) {
-				 std::cout << this->Food;
+				 std::cout << this->SnakeHad;
 			 }
-			// else if (i == ) {
-			// 
-			// }
+			 else if (i == this->FoodY && j == this->FoodX) {
+				 std::cout << "F";
+			 }
+			 else {
+				 std::cout << " ";
+			 }
+			
 		}
 		std::cout << std::endl;
 	}
@@ -58,6 +62,7 @@ void Game::DrawGameArea() const {
 	}
 	std::cout << std::endl;
 
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
 }
 
 void Game::FoodGenerate() {
