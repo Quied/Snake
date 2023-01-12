@@ -1,6 +1,5 @@
 #include "Game.h"
 
-
 HANDLE Window = GetStdHandle(STD_OUTPUT_HANDLE);
 
 //===< NUMBER OF COLOR >====
@@ -46,7 +45,7 @@ void Game::DrawGameArea() const {
 				 std::cout << this->SnakeHad;
 			 }
 			 else if (i == this->FoodY && j == this->FoodX) {
-				 std::cout << "F";
+				 std::cout << Food;
 			 }
 			 else {
 				 std::cout << " ";
@@ -66,6 +65,6 @@ void Game::DrawGameArea() const {
 }
 
 void Game::FoodGenerate() {
-	this->FoodX = rand() % this->AreaHeight;
-	this->FoodY = rand() % this->AreaWidth;
+	FoodY = rand() % AreaHeight;
+	FoodX = rand() % AreaWidth;
 }

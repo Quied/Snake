@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <conio.h>
 
 enum SnakeMove {
 	UP = 0,
@@ -14,9 +15,7 @@ class Snake {
 	const uint32_t Max_Snake_Size = 50;
 
 public: 
-		Snake(uint32_t StartUpSnakeSize) : Snake_Size(StartUpSnakeSize){}
-
-	
+		
 		void MoveUp();
 
 		void MoveDown();

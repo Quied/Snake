@@ -6,18 +6,18 @@
 class Loger {
 
 	const std::string history_ = "history.txt";
-	bool ThereAreHistory;
+	bool ThereAreHistory_;
 
 public:
 
 	Loger() {
 		std::ifstream file(history_);
-		if (!file.is_open()) { ThereAreHistory = false; }
-		else { ThereAreHistory = true; }
+		if (!file.is_open()) { ThereAreHistory_ = false; }
+		else { ThereAreHistory_ = true; }
 	}
 
 	void ShowHistory() {
-		if (ThereAreHistory) {
+		if (ThereAreHistory_) {
 			std::string temp;
 			std::ifstream file(history_);
 
@@ -29,6 +29,17 @@ public:
 			std::cout << "History is empty";
 		}
 	}
+
+	void SaveLog(int score, int seconds) {
+		std::ofstream file(history_, std::fstream::app);
+			
+		file << "Score: "; file << score; 
+		file << " Secons: "; file << seconds;
+		file << std::endl;
+
+		std::cout << "Log was saved" << std::endl;
+	}
+
 	void DeleteHistory();
 
 };
