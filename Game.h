@@ -8,6 +8,7 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+#include <atomic>
 #include <Windows.h>
 #include "Snake.h"
 
@@ -16,32 +17,46 @@ class Game {
 	//====< GAME AREA SIZE >====
 	const int AreaHeight = 30, AreaWidth = 50;
 
-	//====< SNAKE COORDINATES >=====
+	//====< CURRENT SNAKE COORDINATES >=====
 	int SnakeX = AreaWidth / 2, SnakeY = AreaHeight / 2;
 
-	//====< FOOD COORDINATES >=====
+	//====< FOOD SPAWN COORDINATES >=====
 	int FoodX, FoodY;
 
+	//===< SNAKE TAIL >=====
+	int TailX[50], TailY[50], CurrentSizeOfTail = 0;
+	
+
 	mutable std::mutex mtx_;
-	mutable uint32_t score_ = 0;
+	// std::atomic<uint32_t> score_ { 1 };
+	uint32_t score_{ 1 };
+	bool GameEnd_ = false;
 
 	const char SnakeHad = '*';
 	const char SnakeBody = '#';
 	const char Food = '@';
 
-public:
-		 Game() { FoodGenerate(); }
 
-		 static int GetCurrentScore();
+public:
+		 Game();
+
+		 int GetCurrentScore() const;
+
+		 void Move();
 
 		 void FoodGenerate();
 
 		 int MainMenu() const;
 
-		 void DrawGameArea() const;
+		 void CheckCollision();
 
-		 bool GameEnd() const;
+		 void CheckFood();
 
-		 void IncreaseScore() const;
+		 void DrawGameArea();
 
+		 void GameEnd();
+
+		 void Eat();
+
+		 void IncreaseScore();
 };

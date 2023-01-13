@@ -1,8 +1,2 @@
-﻿  ConsoleSnake.cpp
-c:\users\ikstr\source\repos\consolesnake\consolesnake\consolesnake.cpp(7): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-c:\users\ikstr\source\repos\consolesnake\consolesnake\consolesnake.cpp(43): error C2664: "void Loger::SaveLog(int,int)": невозможно преобразовать аргумент 2 из "_To" в "int"
-          with
-          [
-              _To=std::chrono::milliseconds
-          ]
-  c:\users\ikstr\source\repos\consolesnake\consolesnake\consolesnake.cpp(43): note: Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+﻿  Game.cpp
+  ConsoleSnake.vcxproj -> C:\Users\ikstr\source\repos\ConsoleSnake\Debug\ConsoleSnake.exe

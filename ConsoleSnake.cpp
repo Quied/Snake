@@ -2,7 +2,7 @@
 #include "Game.h"
 #include "Snake.h"
 #include "Loger.h"
-
+/*
 int main() {
 	srand(time(NULL));
 
@@ -10,11 +10,8 @@ int main() {
 		Game Setup;
 		Loger log;
 
-		 auto begin = std::chrono::steady_clock::now();
-
 			switch (Setup.MainMenu()) {
 			case 1:
-				 begin = std::chrono::steady_clock::now();
 
 					while (true) {
 						CSL_CLEAR;
@@ -38,9 +35,31 @@ int main() {
 				break;
 			}
 
-			//===< GET TIME IN SECONDS AT THE GAME >===
-			auto end = std::chrono::steady_clock::now();
-			auto Time = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
-		//	 log.SaveLog(42, Time);
 	}
+}*/
+
+
+int main() {
+
+	Game Setup;
+	
+	std::thread Render([&]() {
+		while (true) {
+			CSL_CLEAR
+			Setup.DrawGameArea();		
+		}
+	});
+
+	std::thread Control([&]() {
+		while (true) {
+			Setup.Move();
+			Setup.CheckCollision();
+			Setup.CheckFood();
+		}
+	});
+
+
+	Control.join();
+	Render.join();
 }
+

@@ -37,7 +37,7 @@ public:
 		file << " Secons: "; file << seconds;
 		file << std::endl;
 
-		std::cout << "Log was saved" << std::endl;
+		std::cout << "Statistic was saved" << std::endl;
 	}
 
 	void DeleteHistory();
