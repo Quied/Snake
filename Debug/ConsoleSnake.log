@@ -1,2 +1,5 @@
-﻿  Game.cpp
+﻿  ConsoleSnake.cpp
+c:\users\ikstr\source\repos\consolesnake\consolesnake\consolesnake.cpp(43): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Game.cpp
+  Создание кода...
   ConsoleSnake.vcxproj -> C:\Users\ikstr\source\repos\ConsoleSnake\Debug\ConsoleSnake.exe

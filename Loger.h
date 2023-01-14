@@ -18,15 +18,20 @@ public:
 
 	void ShowHistory() {
 		if (ThereAreHistory_) {
+			CSL_CLEAR
 			std::string temp;
 			std::ifstream file(history_);
+			std::cout << std::endl;
 
+			std::cout << "    --- HISTORY ---" << std::endl;
 				while (std::getline(file, temp)) 
 					std::cout << temp << std::endl;
+		
 				
+				std::cout << std::endl;
 		}
 		else {
-			std::cout << "History is empty";
+			std::cout << "History is empty" << std::endl << std::endl;
 		}
 	}
 

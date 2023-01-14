@@ -44,6 +44,8 @@ int main() {
 
 	Game Setup;
 	
+	Setup.MainMenu();
+
 	std::thread Render([&]() {
 		while (true) {
 			CSL_CLEAR
@@ -53,7 +55,7 @@ int main() {
 
 	std::thread Control([&]() {
 		while (true) {
-			Setup.Move();
+		//	Setup.Move();
 			Setup.CheckCollision();
 			Setup.CheckFood();
 		}
