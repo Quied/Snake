@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Score: 24 Time: 234sec
 Score: 24 Time: 24sec
 Score: 14 Time: 2234sec
@@ -6,3 +7,9 @@ Score: 24 Time: 234sec
 Score: 24 Time: 244sec
 Score: 14 Time: 34sec
 Score: 24 Time: 234sec
+=======
+Score: 4 Time: 232 seconds
+Score: 24 Time: 512 seconds
+Score: 42 Time: 2242 seconds
+Score: 14 Time: 12 seconds
+>>>>>>> abb268d (First with update)

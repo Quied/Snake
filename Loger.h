@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+<<<<<<< HEAD
 #include <string>
 #include <fstream>
 
@@ -46,5 +47,24 @@ public:
 	}
 
 	void DeleteHistory();
+=======
+#include <fstream>
+#include <string>
+// #include "mics.h"
+#include <ctime>
+
+class Loger {
+
+public:
+
+	Loger();
+
+	void showHistory();
+
+
+private:
+	const std::string history_ = "history.txt";
+	bool thereAreHistoryFile_;
+>>>>>>> abb268d (First with update)
 
 };
