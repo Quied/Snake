@@ -52,9 +52,13 @@ public:
 
 		 void CheckFood();
 
+		 void RecordGameTime();
+
 		 void DrawGameArea();
 
 		 void GameEnd();
+
+		 void GameWin();
 
 		 void Eat();
 

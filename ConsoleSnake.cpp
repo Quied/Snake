@@ -40,6 +40,7 @@ int main() {
 
 
 int main() {
+	srand(time(NULL));
 
 	Game Setup;
 	
@@ -59,6 +60,11 @@ int main() {
 	});
 
 
+	std::thread Time([&]() {
+		Setup.RecordGameTime();
+	});
+
+	Time.join();
 	Control.join();
 	Render.join();
 }
