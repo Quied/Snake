@@ -9,7 +9,8 @@ void Update::windowUpdate(State &state, Render &render, Snake &snake) {
 			snake.moveAction(state.lastMoveDirection);
 			render.foodFind(state, snake);
 			render.checkBorders(state, snake);
-			std::this_thread::sleep_for(std::chrono::milliseconds(state.updateDelay));
+			render.snakeTailCollision(state, snake);
+			render.delayBetweenWindowUpdate(state);
 
 		}
 	}

@@ -11,5 +11,4 @@ public:
 
 	void windowUpdate(State &, Render &, Snake &);
 
-
 };

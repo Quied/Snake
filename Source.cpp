@@ -4,6 +4,8 @@
 #include "Render.h"
 #include "Update.h"
 #include "Snake.h"
+#include <mutex>
+
 
 int main() {
 	srand(time(NULL));
@@ -27,7 +29,6 @@ int main() {
     });
 
 	threads.emplace_back([&]() {
-		// std::scoped_lock lock(mutex);
 		input.directionUpdate(state);
 	});
 	

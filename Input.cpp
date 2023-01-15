@@ -2,9 +2,8 @@
 
 void Input::directionUpdate(State &state) {
 	
-	// Mutex lock ~
-
 	while (true) {
+		mtx_.lock();
 		if (_kbhit()) {
 			char move = _getch();
 			switch (move) {
@@ -30,6 +29,7 @@ void Input::directionUpdate(State &state) {
 			case 80: state.lastMoveDirection = 80;  break;
 			}
 		}
+		mtx_.unlock();
 	}
 	
 }

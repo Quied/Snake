@@ -16,4 +16,8 @@ public:
 
 	void snakeMove(State&, Snake&);
 
+private:
+
+	std::mutex mtx_;
+
 };

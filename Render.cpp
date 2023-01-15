@@ -32,15 +32,14 @@ void Render::drawArea(State &state, Snake &snake) {
 
 
 					//==< DRAW TAIL >===
-					bool tailPrint = false;
+					bool tasilIsDraw = false;
 					for (int w = 0; w < snake.currentSizeOfTail; w++) {
 						if (snake.tailX[w] == j && snake.tailY[w] == i) {
 							std::cout << snake.snakeBody;
-							tailPrint = true;
+							tasilIsDraw = true;
 						}
 					}
-					if (!tailPrint)
-						std::cout << " ";
+					if (!tasilIsDraw) std::cout << " ";
 				}
 			}
 			std::cout << std::endl;
@@ -72,16 +71,19 @@ void Render::drawArea(State &state, Snake &snake) {
 
 			TailSavePrevMoveX = TailSavePosX;
 			TailSavePrevMoveY = TailSavePosY;
-			//TailSavePrevMoveX = TailX[t];
-			//TailSavePrevMoveY = TailY[t];
 		}
-
-		//===< DELAY BETWEEN AREA UPDATES >====
-		//	std::this_thread::sleep_for(std::chrono::milliseconds(UpdateDelay));
 }
 
 Render::Render() {
 	foodGenerate();
+}
+
+void Render::snakeTailCollision(State &state, Snake &snake) {
+	for (int i = 0; i < snake.currentSizeOfTail; i++) {
+		if (snake.tailX[i] == snake.snakeX && snake.tailY[i] == snake.snakeY) {
+			gameEnd(state, snake);
+		}
+	}
 }
 
 void Render::foodFind(State &state, Snake& snake) {
@@ -130,6 +132,10 @@ void Render::gameWin(State& state, Snake& snake) {
 		
 		state.menu();
 	}
+}
+
+void Render::delayBetweenWindowUpdate(State& state) {
+	std::this_thread::sleep_for(std::chrono::milliseconds(state.updateDelay));
 }
 
 void Render::checkBorders(State &state, Snake &snake) {

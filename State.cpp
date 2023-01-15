@@ -1,4 +1,5 @@
 #include "State.h"
+Loger gameLoger;
 
 void State::menu() {
 	std::cout << "<===== MENU ====>" << std::endl << std::endl;
@@ -19,7 +20,7 @@ void State::menu() {
 	case GameMenu::HISTORY:
 
 		CONSOLE_CLEAR;
-	//	loger.showHistory();
+		gameLoger.showHistory();
 		menu();
 
 		break;
@@ -31,3 +32,4 @@ void State::menu() {
 		break;
 	}
 }
+

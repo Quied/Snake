@@ -1,4 +1,6 @@
 #pragma once
+#include <thread>
+
 #include "Snake.h"
 #include "State.h"
 #include "mics.h"
@@ -21,6 +23,10 @@ public:
 	void gameWin(State&, Snake&);
 
 	void resetData(State&, Snake&);
+
+	void snakeTailCollision(State&, Snake&);
+
+	void delayBetweenWindowUpdate(State&);
 
 private:
 

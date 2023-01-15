@@ -6,6 +6,18 @@ Loger::Loger() {
 	else { thereAreHistoryFile_ = true; }
 }
 
+void Loger::saveScore(State &state) {
+	
+	// std::ofstream file(history_, std::ofstream::app);
+	// 
+	// if (state.score_ < 10) {
+	// 	file <<  "Score: "  << state.score_; file << " ";
+	// 
+	// }
+
+
+}
+
 void Loger::showHistory() {
 	if (thereAreHistoryFile_) {
 

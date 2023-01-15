@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-// #include "mics.h"
+#include "State.h"
 #include <ctime>
 
 class Loger {
@@ -13,9 +13,13 @@ public:
 
 	void showHistory();
 
+	void saveScore(State&);
 
 private:
-	const std::string history_ = "history.txt";
+
+	 std::string history_ = "history.txt";
+	
 	bool thereAreHistoryFile_;
 
 };
+
